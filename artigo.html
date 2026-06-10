@@ -13,8 +13,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Manrope:wght@400..800&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 <script src="assets/cms.js"></script>
+<link rel="canonical" href="https://naopara.pt/artigo.html">
+<link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/artigo.html">
+<link rel="alternate" hreflang="en" href="https://naopara.pt/en/artigo.html">
+<link rel="alternate" hreflang="x-default" href="https://naopara.pt/artigo.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Não Para">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="Artigo | Não Para">
+<meta property="og:description" content="Dicas e ciência da corrida — artigos práticos para corredores de todos os níveis.">
+<meta property="og:url" content="https://naopara.pt/artigo.html">
+<meta property="og:image" content="https://naopara.pt/assets/img/hero.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+<a class="skip-link" href="#art-root">Saltar para o conteúdo</a>
 
 <header class="hdr">
   <div class="wrap hdr__in">
@@ -58,9 +71,9 @@
   <div class="wrap">
     <div class="foot__top">
       <div class="foot__lede">Não pares.<br><b>Corre</b> o próximo<br>quilómetro.</div>
-      <div class="fcol"><h5>Treino</h5><a href="planos.html">Plano 5K</a><a href="planos.html">Plano 10K</a><a href="planos.html">Meia maratona</a><a href="planos.html">Maratona</a></div>
+      <div class="fcol"><h5>Treino</h5><a href="plano.html?p=5k-iniciante">Plano 5K</a><a href="plano.html?p=10k-intermedio">Plano 10K</a><a href="plano.html?p=21k-popular">Meia maratona</a><a href="plano.html?p=42k-iniciante">Maratona</a></div>
       <div class="fcol"><h5>Recursos</h5><a href="blog.html">Dicas</a><a href="nutricao.html">Nutrição</a><a href="nutricao.html">Suplementação</a><a href="sobre.html">Sobre nós</a></div>
-      <div class="fcol"><h5>Segue-nos</h5><a href="#">Instagram</a><a href="#">Strava</a><a href="#">YouTube</a><a href="sobre.html">Contacto</a></div>
+      <div class="fcol"><h5>Segue-nos</h5><a href="https://www.instagram.com/naopara" target="_blank" rel="noopener">Instagram</a><a href="https://www.strava.com/clubs/naopara" target="_blank" rel="noopener">Strava</a><a href="https://www.youtube.com/@naopara" target="_blank" rel="noopener">YouTube</a><a href="sobre.html">Contacto</a></div>
     </div>
     <div class="foot__bot"><span>© 2026 Não Para · Feito para correr em Portugal</span><span>Privacidade · Termos</span></div>
   </div>
@@ -77,8 +90,8 @@
   function qp(k){ return new URLSearchParams(location.search).get(k); }
   function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];}); }
 
-  var T = EN ? { team:"Não Para Team", back:"Back to tips", read:"min read", more:"Read more tips", ctaK:"Weekly newsletter", ctaH:"Tips like this,<br>every week.", ctaP:"Get the week's best article and one actionable tip straight to your inbox.", sub:"Subscribe", note:"Join 12,000+ runners.", ok:"✓ You're in. See you on the road.", crumb:"Tips", notfound:"Article not<br>found.", notfoundP:"That article doesn't exist or the link is incomplete.", all:"See all articles" }
-              : { team:"Equipa Não Para", back:"Voltar às dicas", read:"min de leitura", more:"Ver mais dicas", ctaK:"Newsletter semanal", ctaH:"Dicas como esta,<br>todas as semanas.", ctaP:"Recebe o melhor artigo da semana e uma dica acionável diretamente no teu e-mail.", sub:"Subscrever", note:"Junta-te a +12.000 corredores.", ok:"✓ Estás dentro. Vemo-nos na estrada.", crumb:"Dicas", notfound:"Artigo não<br>encontrado.", notfoundP:"Esse artigo não existe ou o link está incompleto.", all:"Ver todos os artigos" };
+  var T = EN ? { team:"Não Para Team", back:"Back to tips", read:"min read", more:"Read more tips", ctaK:"Weekly newsletter", ctaH:"Tips like this,<br>every week.", ctaP:"Get the week's best article and one actionable tip straight to your inbox.", sub:"Subscribe", note:"No spam. Unsubscribe anytime.", ok:"✓ You're in. See you on the road.", crumb:"Tips", notfound:"Article not<br>found.", notfoundP:"That article doesn't exist or the link is incomplete.", all:"See all articles" }
+              : { team:"Equipa Não Para", back:"Voltar às dicas", read:"min de leitura", more:"Ver mais dicas", ctaK:"Newsletter semanal", ctaH:"Dicas como esta,<br>todas as semanas.", ctaP:"Recebe o melhor artigo da semana e uma dica acionável diretamente no teu e-mail.", sub:"Subscrever", note:"Sem spam. Cancela quando quiseres.", ok:"✓ Estás dentro. Vemo-nos na estrada.", crumb:"Dicas", notfound:"Artigo não<br>encontrado.", notfoundP:"Esse artigo não existe ou o link está incompleto.", all:"Ver todos os artigos" };
   var BLOG = EN ? "blog.html" : "blog.html";
 
   var slug = qp("a") || "regra-10-porcento";
@@ -93,6 +106,9 @@
   }
 
   document.title = art.title + " | Não Para";
+  var ld = document.createElement("script"); ld.type = "application/ld+json";
+  ld.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "Article", "headline": art.title, "description": art.dek, "datePublished": art.date, "inLanguage": (EN ? "en" : "pt-PT"), "author": { "@type": "Organization", "name": "Não Para" }, "publisher": { "@type": "Organization", "name": "Não Para" } });
+  document.head.appendChild(ld);
   var d = new Date(art.date + "T00:00:00");
   var months = EN ? ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] : ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
   var dateStr = d.getDate() + " " + months[d.getMonth()] + " " + d.getFullYear();
@@ -119,7 +135,9 @@
   html += '</article>';
 
   /* related */
-  var others = window.NP_ARTICLES.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+  var others = window.NP_ARTICLES.filter(function (a) { return a.slug !== slug && a.cat === art.cat; });
+  window.NP_ARTICLES.forEach(function (a) { if (a.slug !== slug && a.cat !== art.cat) others.push(a); });
+  others = others.slice(0, 3);
   html += '<section class="sec paper2 related"><div class="wrap">' +
     '<div class="shead"><div><span class="kicker">' + (EN ? "Keep reading" : "Continua a ler") + '</span><h2 class="h-lg" style="margin-top:16px">' + esc(T.more) + '.</h2></div></div>' +
     '<div class="art-grid">';

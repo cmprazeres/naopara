@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<title>PDF preview (dev)</title>
+<script>window.NP_LANG = new URLSearchParams(location.search).get('lang') || 'pt';</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
+body{background:#444;margin:0;padding:20px;display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+canvas{box-shadow:0 4px 18px rgba(0,0,0,.5);background:#fff}
+#status{position:fixed;top:4px;left:8px;color:#c9f73f;font:700 14px monospace;z-index:9}
+</style>
+</head>
+<body>
+<div id="status">a gerar…</div>
+<script src="assets/plans.js"></script>
+<script src="assets/plan-pdf.js"></script>
+<script>
+(async function(){
+  var status = document.getElementById('status');
+  try{
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    /* interceptar o save */
+    var data = null;
+    var origSave = window.jspdf.jsPDF.API.save;
+    window.jspdf.jsPDF.API.save = function(){ data = this.output('arraybuffer'); };
+    var slug = new URLSearchParams(location.search).get('p') || '5k-iniciante';
+    window.NP_downloadPlanPDF(window.NP_buildPlan(slug));
+    if(!data){ status.textContent = 'ERRO: sem dados'; return; }
+    var pdf = await pdfjsLib.getDocument({data:data}).promise;
+    status.textContent = pdf.numPages + ' páginas · ' + slug;
+    for(var i=1;i<=pdf.numPages;i++){
+      var page = await pdf.getPage(i);
+      var vp = page.getViewport({scale:0.78});
+      var c = document.createElement('canvas');
+      c.width = vp.width; c.height = vp.height;
+      document.body.appendChild(c);
+      await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;
+    }
+  }catch(e){ status.textContent = 'ERRO: ' + e.message; }
+})();
+</script>
+</body>
+</html>

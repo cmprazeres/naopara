@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://naopara.pt/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/index.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/index.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/planos.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/planos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/planos.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/en/planos.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/planos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/planos.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/plano.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/plano.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/plano.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/en/plano.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/plano.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/plano.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/blog.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/en/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/blog.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/artigo.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/artigo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/artigo.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/en/artigo.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/artigo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/artigo.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/nutricao.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/nutricao.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/nutricao.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/en/nutricao.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/nutricao.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/nutricao.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/sobre.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/sobre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/sobre.html"/>
+  </url>
+  <url>
+    <loc>https://naopara.pt/en/sobre.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/sobre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naopara.pt/en/sobre.html"/>
+  </url>
+</urlset>

@@ -13,8 +13,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Manrope:wght@400..800&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 <script src="assets/cms.js"></script>
+<link rel="canonical" href="https://naopara.pt/planos.html">
+<link rel="alternate" hreflang="pt-PT" href="https://naopara.pt/planos.html">
+<link rel="alternate" hreflang="en" href="https://naopara.pt/en/planos.html">
+<link rel="alternate" hreflang="x-default" href="https://naopara.pt/planos.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Não Para">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="Planos de Treino | Não Para">
+<meta property="og:description" content="Planos de treino estruturados para corrida — do 5km à maratona. Escolhe o teu nível e começa hoje.">
+<meta property="og:url" content="https://naopara.pt/planos.html">
+<meta property="og:image" content="https://naopara.pt/assets/img/hero.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
 
 <header class="hdr">
   <div class="wrap hdr__in">
@@ -53,12 +66,12 @@
 </div>
 
 <!-- PAGE HERO -->
-<section class="phero">
+<section class="phero" id="conteudo">
   <div class="phero__bg" aria-hidden="true"><img src="assets/img/track.png" alt=""></div>
   <div class="wrap">
     <div class="phero__crumb"><b>Não Para</b> · Planos de treino</div>
     <h1 class="h-xl" style="max-width:14ch">Planos que te<br>levam à <em class="mark">meta</em>.</h1>
-    <p class="lead" style="margin-top:24px">Programas semana-a-semana desenhados por treinadores e validados pela ciência. Escolhe a distância, define o objetivo e deixa o resto connosco.</p>
+    <p class="lead" style="margin-top:24px">Programas semana-a-semana baseados nos planos iniciante do Hal Higdon — os mais simples que existem. Escolhe a distância e começa hoje, qualquer que seja o teu ponto de partida.</p>
   </div>
 </section>
 
@@ -73,93 +86,73 @@
 <section class="sec" id="planos">
   <div class="wrap">
     <div class="shead" style="margin-bottom:22px">
-      <div><span class="kicker">18 planos disponíveis</span><h2 class="h-lg rv" style="margin-top:18px">Filtra por<br>distância.</h2></div>
-    </div>
-    <div class="tabs" data-filter-group data-target="#plan-list">
-      <button class="tab is-on" data-filter="all">Todos</button>
-      <button class="tab" data-filter="5k">5K</button>
-      <button class="tab" data-filter="10k">10K</button>
-      <button class="tab" data-filter="21k">Meia maratona</button>
-      <button class="tab" data-filter="42k">Maratona</button>
-      <button class="tab" data-filter="trail">Trail</button>
+      <div><span class="kicker">4 planos oficiais</span><h2 class="h-lg rv" style="margin-top:18px">Escolhe a tua<br>distância.</h2></div>
+      <p class="lead rv rv-2" style="max-width:32ch">Planos simples, sem ritmos complicados — corre devagar, soma as semanas e chega à linha de chegada.</p>
     </div>
 
-    <div id="plan-list" class="grid-3">
-      <!-- card template -->
-      <article class="card rv" data-cat="5k">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Iniciante</span><span class="stat__l" style="color:var(--on-paper-dim)">8 sem</span></div>
-        <div class="price" style="font-size:54px">5K</div>
-        <p>Do sofá aos 5 quilómetros. Combina caminhada e corrida até correres a distância sem parar.</p>
-        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">3x / semana · 20–40 min<br>Inclui plano de força base</div>
-        <a href="plano.html?p=5k-iniciante" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+    <div id="plan-list" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--paper-line);border:1px solid var(--paper-line)">
+
+      <article class="plan-card rv" data-cat="5k">
+        <div class="plan-card__top">
+          <span class="kicker">Para todos</span>
+          <span class="plan-card__dur">8 semanas</span>
+        </div>
+        <div class="plan-card__dist">5K</div>
+        <p class="plan-card__desc">O plano mais simples para a tua primeira corrida. Três corridas curtas por semana e uma caminhada — do sofá à linha de chegada, sem stress.</p>
+        <ul class="plan-card__facts">
+          <li>3 corridas por semana</li>
+          <li>Corrida até 4,8 km</li>
+          <li>Corrida · Caminhada · Descanso</li>
+        </ul>
+        <a href="plano.html?p=5k-iniciante" class="btn btn--ghost" style="margin-top:auto">Ver plano<span class="arr">↗</span></a>
       </article>
 
-      <article class="card rv rv-2" data-cat="5k">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Sub-25</span><span class="stat__l" style="color:var(--on-paper-dim)">6 sem</span></div>
-        <div class="price" style="font-size:54px">5K</div>
-        <p>Já corres 5K? Afina o ritmo e ataca a barreira dos 25 minutos com treino de velocidade.</p>
-        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">4x / semana · intervalados<br>Limiar + repetições 400m</div>
-        <a href="plano.html?p=5k-sub25" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      <article class="plan-card rv rv-2" data-cat="10k">
+        <div class="plan-card__top">
+          <span class="kicker">Para todos</span>
+          <span class="plan-card__dur">8 semanas</span>
+        </div>
+        <div class="plan-card__dist">10K</div>
+        <p class="plan-card__desc">Uma abordagem suave que te leva aos 10 km. Três corridas e dois dias de treino alternativo por semana — ideal para a tua primeira vez na distância.</p>
+        <ul class="plan-card__facts">
+          <li>3 corridas por semana</li>
+          <li>Longão até 8,9 km</li>
+          <li>Corrida · Longão · Cross-training</li>
+        </ul>
+        <a href="plano.html?p=10k-intermedio" class="btn btn--ghost" style="margin-top:auto">Ver plano<span class="arr">↗</span></a>
       </article>
 
-      <article class="card rv rv-3" data-cat="10k">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Intermédio</span><span class="stat__l" style="color:var(--on-paper-dim)">10 sem</span></div>
-        <div class="price" style="font-size:54px">10K</div>
-        <p>Resistência e ritmo combinados para um 10K forte. O degrau perfeito antes da meia.</p>
-        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">4x / semana · longão 12 km<br>Treino de limiar semanal</div>
-        <a href="plano.html?p=10k-intermedio" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      <article class="plan-card plan-card--dark rv rv-3" data-cat="21k">
+        <div class="plan-card__top">
+          <span class="kicker" style="color:var(--volt)">Mais popular</span>
+          <span class="plan-card__dur">12 semanas</span>
+        </div>
+        <div class="plan-card__dist" style="color:var(--volt)">21K</div>
+        <p class="plan-card__desc">Doze semanas com longões que crescem até aos 16 km e duas provas de treino. O plano de iniciante mais usado do mundo para a primeira meia maratona.</p>
+        <ul class="plan-card__facts">
+          <li>4 corridas por semana</li>
+          <li>Longão até 16,1 km</li>
+          <li>Corrida · Longão · Cross-training</li>
+        </ul>
+        <a href="plano.html?p=21k-popular" class="btn btn--volt" style="margin-top:auto">Ver plano<span class="arr">↗</span></a>
       </article>
 
-      <article class="card rv" data-cat="10k">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Avançado</span><span class="stat__l" style="color:var(--on-paper-dim)">8 sem</span></div>
-        <div class="price" style="font-size:54px">10K</div>
-        <p>Para quem quer descer abaixo dos 45 min. Volume controlado e intensidade cirúrgica.</p>
-        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">5x / semana · VO₂máx<br>Fartlek + tempo runs</div>
-        <a href="plano.html?p=10k-avancado" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      <article class="plan-card plan-card--dark rv rv-4" data-cat="42k">
+        <div class="plan-card__top">
+          <span class="kicker" style="color:var(--volt)">O grande desafio</span>
+          <span class="plan-card__dur">18 semanas</span>
+        </div>
+        <div class="plan-card__dist" style="color:var(--volt)">42K</div>
+        <p class="plan-card__desc">Dezoito semanas que te levam dos 10 aos 42 km, com longões até 32 km e taper guiado. Feito para quem corre a primeira maratona.</p>
+        <ul class="plan-card__facts">
+          <li>4 corridas por semana</li>
+          <li>Longão até 32,2 km</li>
+          <li>Corrida · Longão · Cross-training</li>
+        </ul>
+        <a href="plano.html?p=42k-iniciante" class="btn btn--volt" style="margin-top:auto">Ver plano<span class="arr">↗</span></a>
       </article>
 
-      <article class="card card--dark rv rv-2" data-cat="21k">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Mais popular</span><span class="stat__l" style="color:var(--on-dark-dim)">12 sem</span></div>
-        <div class="price" style="font-size:54px;color:var(--volt)">21K</div>
-        <p>A distância rainha do equilíbrio. Longões progressivos, limiar e simulação de prova.</p>
-        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-dark-dim);letter-spacing:.04em;line-height:2">4x / semana · longão 18 km<br>Estratégia de ritmo de prova</div>
-        <a href="plano.html?p=21k-popular" class="btn btn--volt" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
-      </article>
-
-      <article class="card rv rv-3" data-cat="21k">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Sub-1h45</span><span class="stat__l" style="color:var(--on-paper-dim)">14 sem</span></div>
-        <div class="price" style="font-size:54px">21K</div>
-        <p>Plano de performance para meia maratonistas que querem voar nos 21 quilómetros.</p>
-        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">5x / semana · 45–65 km<br>Bloco de força + mobilidade</div>
-        <a href="plano.html?p=21k-sub145" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
-      </article>
-
-      <article class="card card--dark rv" data-cat="42k">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">O grande desafio</span><span class="stat__l" style="color:var(--on-dark-dim)">16 sem</span></div>
-        <div class="price" style="font-size:54px;color:var(--volt)">42K</div>
-        <p>Periodização completa para a tua primeira maratona. Chega à meta inteiro e a sorrir.</p>
-        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-dark-dim);letter-spacing:.04em;line-height:2">5x / semana · longão 32 km<br>Carbo-loading + taper guiado</div>
-        <a href="plano.html?p=42k-iniciante" class="btn btn--volt" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
-      </article>
-
-      <article class="card rv rv-2" data-cat="42k">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Sub-3h30</span><span class="stat__l" style="color:var(--on-paper-dim)">18 sem</span></div>
-        <div class="price" style="font-size:54px">42K</div>
-        <p>Para maratonistas experientes em busca da marca. Volume alto e gestão de fadiga.</p>
-        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">6x / semana · 70–90 km<br>Duplos treinos + análise</div>
-        <a href="plano.html?p=42k-sub330" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
-      </article>
-
-      <article class="card rv rv-3" data-cat="trail">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Montanha</span><span class="stat__l" style="color:var(--on-paper-dim)">12 sem</span></div>
-        <div class="price" style="font-size:54px">Trail</div>
-        <p>Sai do asfalto. Força específica, técnica de descida e resistência para os trilhos.</p>
-        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">4x / semana · +D positivo<br>Treino de subidas semanal</div>
-        <a href="plano.html?p=trail" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
-      </article>
     </div>
-  </div>
-</section>
 
 <!-- HOW IT WORKS -->
 <section class="sec dark">
@@ -196,9 +189,9 @@
   <div class="wrap">
     <div class="foot__top">
       <div class="foot__lede">Não pares.<br><b>Corre</b> o próximo<br>quilómetro.</div>
-      <div class="fcol"><h5>Treino</h5><a href="planos.html">Plano 5K</a><a href="planos.html">Plano 10K</a><a href="planos.html">Meia maratona</a><a href="planos.html">Maratona</a></div>
+      <div class="fcol"><h5>Treino</h5><a href="plano.html?p=5k-iniciante">Plano 5K</a><a href="plano.html?p=10k-intermedio">Plano 10K</a><a href="plano.html?p=21k-popular">Meia maratona</a><a href="plano.html?p=42k-iniciante">Maratona</a></div>
       <div class="fcol"><h5>Recursos</h5><a href="blog.html">Dicas</a><a href="nutricao.html">Nutrição</a><a href="nutricao.html">Suplementação</a><a href="sobre.html">Sobre nós</a></div>
-      <div class="fcol"><h5>Segue-nos</h5><a href="#">Instagram</a><a href="#">Strava</a><a href="#">YouTube</a><a href="sobre.html">Contacto</a></div>
+      <div class="fcol"><h5>Segue-nos</h5><a href="https://www.instagram.com/naopara" target="_blank" rel="noopener">Instagram</a><a href="https://www.strava.com/clubs/naopara" target="_blank" rel="noopener">Strava</a><a href="https://www.youtube.com/@naopara" target="_blank" rel="noopener">YouTube</a><a href="sobre.html">Contacto</a></div>
     </div>
     <div class="foot__bot"><span>© 2026 Não Para · Feito para correr em Portugal</span><span>Privacidade · Termos</span></div>
   </div>
