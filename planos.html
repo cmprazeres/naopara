@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<script>window.NP_LANG='pt';</script>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planos de Treino | Não Para</title>
+<meta name="description" content="Planos de treino estruturados para corrida — do 5km à maratona. Escolhe o teu nível e começa hoje.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Manrope:wght@400..800&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="assets/cms.js"></script>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="index.html" aria-label="Não Para — início"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l4-8 4 5 3-6 5 9"/></svg></span><span>NÃO<b>PARA</b></span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="index.html">Início</a>
+      <a href="planos.html" class="is-active">Planos</a>
+      <a href="blog.html">Dicas</a>
+      <a href="nutricao.html">Nutrição</a>
+      <a href="sobre.html">Sobre</a>
+    </nav>
+    <div class="hdr__cta">
+      <div class="lang" role="group" aria-label="Idioma / Language"><a class="lang__o is-on" href="planos.html" aria-current="true">PT</a><a class="lang__o" href="en/planos.html">EN</a></div>
+      
+      <a href="#planos" class="btn btn--volt">Começar agora<span class="arr">↗</span></a>
+      <button class="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <div class="wrap drawer__top">
+    <a class="brand" href="index.html"><span class="brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l4-8 4 5 3-6 5 9"/></svg></span><span>NÃO<b>PARA</b></span></a>
+    <button class="burger" aria-label="Fechar menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="drawer__links">
+    <a href="index.html"><span class="ix">01</span>Início</a>
+    <a href="planos.html"><span class="ix">02</span>Planos</a>
+    <a href="blog.html"><span class="ix">03</span>Dicas</a>
+    <a href="nutricao.html"><span class="ix">04</span>Nutrição</a>
+    <a href="sobre.html"><span class="ix">05</span>Sobre</a>
+  </nav>
+  <div class="drawer__foot">
+    <div class="lang" role="group" aria-label="Idioma / Language"><a class="lang__o is-on" href="planos.html" aria-current="true">PT</a><a class="lang__o" href="en/planos.html">EN</a></div>
+    <a href="#planos" class="btn btn--volt btn--lg">Começar agora<span class="arr">↗</span></a></div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="phero">
+  <div class="phero__bg" aria-hidden="true"><img src="assets/img/track.png" alt=""></div>
+  <div class="wrap">
+    <div class="phero__crumb"><b>Não Para</b> · Planos de treino</div>
+    <h1 class="h-xl" style="max-width:14ch">Planos que te<br>levam à <em class="mark">meta</em>.</h1>
+    <p class="lead" style="margin-top:24px">Programas semana-a-semana desenhados por treinadores e validados pela ciência. Escolhe a distância, define o objetivo e deixa o resto connosco.</p>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Constrói base<i class="dot"></i>Ganha ritmo<i class="dot"></i>Bate o recorde<i class="dot"></i>Constrói base<i class="dot"></i>Ganha ritmo<i class="dot"></i>Bate o recorde<i class="dot"></i></span>
+    <span>Constrói base<i class="dot"></i>Ganha ritmo<i class="dot"></i>Bate o recorde<i class="dot"></i>Constrói base<i class="dot"></i>Ganha ritmo<i class="dot"></i>Bate o recorde<i class="dot"></i></span>
+  </div>
+</div>
+
+<!-- PLANS LIST -->
+<section class="sec" id="planos">
+  <div class="wrap">
+    <div class="shead" style="margin-bottom:22px">
+      <div><span class="kicker">18 planos disponíveis</span><h2 class="h-lg rv" style="margin-top:18px">Filtra por<br>distância.</h2></div>
+    </div>
+    <div class="tabs" data-filter-group data-target="#plan-list">
+      <button class="tab is-on" data-filter="all">Todos</button>
+      <button class="tab" data-filter="5k">5K</button>
+      <button class="tab" data-filter="10k">10K</button>
+      <button class="tab" data-filter="21k">Meia maratona</button>
+      <button class="tab" data-filter="42k">Maratona</button>
+      <button class="tab" data-filter="trail">Trail</button>
+    </div>
+
+    <div id="plan-list" class="grid-3">
+      <!-- card template -->
+      <article class="card rv" data-cat="5k">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Iniciante</span><span class="stat__l" style="color:var(--on-paper-dim)">8 sem</span></div>
+        <div class="price" style="font-size:54px">5K</div>
+        <p>Do sofá aos 5 quilómetros. Combina caminhada e corrida até correres a distância sem parar.</p>
+        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">3x / semana · 20–40 min<br>Inclui plano de força base</div>
+        <a href="plano.html?p=5k-iniciante" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      </article>
+
+      <article class="card rv rv-2" data-cat="5k">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Sub-25</span><span class="stat__l" style="color:var(--on-paper-dim)">6 sem</span></div>
+        <div class="price" style="font-size:54px">5K</div>
+        <p>Já corres 5K? Afina o ritmo e ataca a barreira dos 25 minutos com treino de velocidade.</p>
+        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">4x / semana · intervalados<br>Limiar + repetições 400m</div>
+        <a href="plano.html?p=5k-sub25" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      </article>
+
+      <article class="card rv rv-3" data-cat="10k">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Intermédio</span><span class="stat__l" style="color:var(--on-paper-dim)">10 sem</span></div>
+        <div class="price" style="font-size:54px">10K</div>
+        <p>Resistência e ritmo combinados para um 10K forte. O degrau perfeito antes da meia.</p>
+        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">4x / semana · longão 12 km<br>Treino de limiar semanal</div>
+        <a href="plano.html?p=10k-intermedio" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      </article>
+
+      <article class="card rv" data-cat="10k">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Avançado</span><span class="stat__l" style="color:var(--on-paper-dim)">8 sem</span></div>
+        <div class="price" style="font-size:54px">10K</div>
+        <p>Para quem quer descer abaixo dos 45 min. Volume controlado e intensidade cirúrgica.</p>
+        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">5x / semana · VO₂máx<br>Fartlek + tempo runs</div>
+        <a href="plano.html?p=10k-avancado" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      </article>
+
+      <article class="card card--dark rv rv-2" data-cat="21k">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Mais popular</span><span class="stat__l" style="color:var(--on-dark-dim)">12 sem</span></div>
+        <div class="price" style="font-size:54px;color:var(--volt)">21K</div>
+        <p>A distância rainha do equilíbrio. Longões progressivos, limiar e simulação de prova.</p>
+        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-dark-dim);letter-spacing:.04em;line-height:2">4x / semana · longão 18 km<br>Estratégia de ritmo de prova</div>
+        <a href="plano.html?p=21k-popular" class="btn btn--volt" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      </article>
+
+      <article class="card rv rv-3" data-cat="21k">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Sub-1h45</span><span class="stat__l" style="color:var(--on-paper-dim)">14 sem</span></div>
+        <div class="price" style="font-size:54px">21K</div>
+        <p>Plano de performance para meia maratonistas que querem voar nos 21 quilómetros.</p>
+        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">5x / semana · 45–65 km<br>Bloco de força + mobilidade</div>
+        <a href="plano.html?p=21k-sub145" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      </article>
+
+      <article class="card card--dark rv" data-cat="42k">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">O grande desafio</span><span class="stat__l" style="color:var(--on-dark-dim)">16 sem</span></div>
+        <div class="price" style="font-size:54px;color:var(--volt)">42K</div>
+        <p>Periodização completa para a tua primeira maratona. Chega à meta inteiro e a sorrir.</p>
+        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-dark-dim);letter-spacing:.04em;line-height:2">5x / semana · longão 32 km<br>Carbo-loading + taper guiado</div>
+        <a href="plano.html?p=42k-iniciante" class="btn btn--volt" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      </article>
+
+      <article class="card rv rv-2" data-cat="42k">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Sub-3h30</span><span class="stat__l" style="color:var(--on-paper-dim)">18 sem</span></div>
+        <div class="price" style="font-size:54px">42K</div>
+        <p>Para maratonistas experientes em busca da marca. Volume alto e gestão de fadiga.</p>
+        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">6x / semana · 70–90 km<br>Duplos treinos + análise</div>
+        <a href="plano.html?p=42k-sub330" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      </article>
+
+      <article class="card rv rv-3" data-cat="trail">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="kicker">Montanha</span><span class="stat__l" style="color:var(--on-paper-dim)">12 sem</span></div>
+        <div class="price" style="font-size:54px">Trail</div>
+        <p>Sai do asfalto. Força específica, técnica de descida e resistência para os trilhos.</p>
+        <div style="font-family:var(--mono);font-size:12.5px;color:var(--on-paper-dim);letter-spacing:.04em;line-height:2">4x / semana · +D positivo<br>Treino de subidas semanal</div>
+        <a href="plano.html?p=trail" class="btn btn--ghost" style="margin-top:6px">Ver detalhe<span class="arr">↗</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="shead"><div><span class="kicker">Como funciona</span><h2 class="h-lg rv" style="margin-top:18px">Quatro passos.<br>Zero confusão.</h2></div></div>
+    <div class="grid-2" style="gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)">
+      <div class="rv" style="background:var(--ink);padding:36px 32px"><div class="stat__n" style="color:var(--volt)">01</div><h3 class="h-md" style="margin:16px 0 10px">Escolhe o objetivo</h3><p class="lead" style="font-size:16px">Distância, data da prova e o teu nível atual. Em 30 segundos.</p></div>
+      <div class="rv rv-2" style="background:var(--ink);padding:36px 32px"><div class="stat__n" style="color:var(--volt)">02</div><h3 class="h-md" style="margin:16px 0 10px">Recebe o plano</h3><p class="lead" style="font-size:16px">Calendário semana-a-semana com cada treino explicado ao detalhe.</p></div>
+      <div class="rv rv-3" style="background:var(--ink);padding:36px 32px"><div class="stat__n" style="color:var(--volt)">03</div><h3 class="h-md" style="margin:16px 0 10px">Corre & regista</h3><p class="lead" style="font-size:16px">Marca cada sessão como feita e sincroniza com o teu relógio.</p></div>
+      <div class="rv rv-4" style="background:var(--ink);padding:36px 32px"><div class="stat__n" style="color:var(--volt)">04</div><h3 class="h-md" style="margin:16px 0 10px">Chega à meta</h3><p class="lead" style="font-size:16px">Ajusta o ritmo, faz o taper e cruza a linha com o depósito cheio.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap cta__grid">
+    <div><span class="kicker" style="color:var(--volt-ink)">Pronto para começar?</span><h2 style="margin-top:18px">Recebe o teu<br>plano grátis.</h2></div>
+    <div>
+      <p style="font-weight:600;margin:0 0 22px;font-size:18px">Diz-nos o teu objetivo e enviamos a primeira semana de treino hoje mesmo.</p>
+      <form class="form" novalidate>
+        <div class="form__row">
+          <input class="inp" type="email" required placeholder="o.teu@email.pt" aria-label="E-mail">
+          <button class="btn" type="submit" style="--bg:var(--volt-ink);--fg:var(--volt);border-color:var(--volt-ink)">Quero o plano<span class="arr">↗</span></button>
+        </div>
+        <span class="form__note">Sem cartão. Sem compromisso.</span>
+        <span class="form__ok">✓ Recebido. Vê o teu e-mail.</span>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__lede">Não pares.<br><b>Corre</b> o próximo<br>quilómetro.</div>
+      <div class="fcol"><h5>Treino</h5><a href="planos.html">Plano 5K</a><a href="planos.html">Plano 10K</a><a href="planos.html">Meia maratona</a><a href="planos.html">Maratona</a></div>
+      <div class="fcol"><h5>Recursos</h5><a href="blog.html">Dicas</a><a href="nutricao.html">Nutrição</a><a href="nutricao.html">Suplementação</a><a href="sobre.html">Sobre nós</a></div>
+      <div class="fcol"><h5>Segue-nos</h5><a href="#">Instagram</a><a href="#">Strava</a><a href="#">YouTube</a><a href="sobre.html">Contacto</a></div>
+    </div>
+    <div class="foot__bot"><span>© 2026 Não Para · Feito para correr em Portugal</span><span>Privacidade · Termos</span></div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

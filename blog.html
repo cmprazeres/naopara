@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<script>window.NP_LANG='pt';</script>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dicas & Ciência da Corrida | Não Para</title>
+<meta name="description" content="Artigos sobre treino, equipamento, recuperação e mentalidade para corredores. Lê, aplica e corre melhor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Manrope:wght@400..800&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="assets/cms.js"></script>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="index.html" aria-label="Não Para — início"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l4-8 4 5 3-6 5 9"/></svg></span><span>NÃO<b>PARA</b></span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="index.html">Início</a>
+      <a href="planos.html">Planos</a>
+      <a href="blog.html" class="is-active">Dicas</a>
+      <a href="nutricao.html">Nutrição</a>
+      <a href="sobre.html">Sobre</a>
+    </nav>
+    <div class="hdr__cta">
+      <div class="lang" role="group" aria-label="Idioma / Language"><a class="lang__o is-on" href="blog.html" aria-current="true">PT</a><a class="lang__o" href="en/blog.html">EN</a></div>
+      
+      <a href="planos.html" class="btn btn--volt">Começar agora<span class="arr">↗</span></a>
+      <button class="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <div class="wrap drawer__top">
+    <a class="brand" href="index.html"><span class="brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l4-8 4 5 3-6 5 9"/></svg></span><span>NÃO<b>PARA</b></span></a>
+    <button class="burger" aria-label="Fechar menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="drawer__links">
+    <a href="index.html"><span class="ix">01</span>Início</a>
+    <a href="planos.html"><span class="ix">02</span>Planos</a>
+    <a href="blog.html"><span class="ix">03</span>Dicas</a>
+    <a href="nutricao.html"><span class="ix">04</span>Nutrição</a>
+    <a href="sobre.html"><span class="ix">05</span>Sobre</a>
+  </nav>
+  <div class="drawer__foot">
+    <div class="lang" role="group" aria-label="Idioma / Language"><a class="lang__o is-on" href="blog.html" aria-current="true">PT</a><a class="lang__o" href="en/blog.html">EN</a></div>
+    <a href="planos.html" class="btn btn--volt btn--lg">Começar agora<span class="arr">↗</span></a></div>
+</div>
+
+<section class="phero">
+  <div class="phero__bg" aria-hidden="true"><img src="assets/img/hero.png" alt=""></div>
+  <div class="wrap">
+    <div class="phero__crumb"><b>Não Para</b> · Dicas & ciência</div>
+    <h1 class="h-xl" style="max-width:16ch">Conhecimento<br>que se <em class="mark">corre</em>.</h1>
+    <p class="lead" style="margin-top:24px">Treino, equipamento, recuperação e mentalidade. Artigos práticos e baseados em evidência para correres mais e melhor — sem lesões.</p>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="sec--tight" style="padding-top:clamp(40px,5vw,64px)">
+  <div class="wrap">
+    <a href="artigo.html?a=regra-10-porcento" class="split rv" style="align-items:stretch">
+      <div class="split__media media" style="aspect-ratio:auto;min-height:320px">
+        <img src="assets/img/track.png" alt="Corredor em treino intenso numa pista" loading="lazy">
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:18px">
+        <div class="art__cat"><b>Em destaque · Treino</b><span>· 11 min</span></div>
+        <h2 class="h-lg" style="font-size:clamp(28px,3.6vw,46px)">A regra dos 10%: o erro que trava (quase) todos os corredores</h2>
+        <p class="lead">Aumentar volume demasiado depressa é a causa nº1 de lesões. Explicamos como crescer em segurança e quando podes — mesmo — acelerar.</p>
+        <span class="link-arr" style="align-self:flex-start">Ler artigo<span class="arr">→</span></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="sec--tight paper2 sec">
+  <div class="wrap">
+    <div class="tabs" data-filter-group data-target="#art-list">
+      <button class="tab is-on" data-filter="all">Tudo</button>
+      <button class="tab" data-filter="treino">Treino</button>
+      <button class="tab" data-filter="equipamento">Equipamento</button>
+      <button class="tab" data-filter="recuperacao">Recuperação</button>
+      <button class="tab" data-filter="mente">Mente</button>
+    </div>
+
+    <div id="art-list" class="art-grid">
+      <a href="artigo.html?a=tenis-certo" class="art rv" data-cat="equipamento"><div class="art__media media"><img src="assets/img/shoes.png" alt="Ténis de corrida" loading="lazy"></div><div class="art__cat"><b>Equipamento</b><span>· 6 min</span></div><h3>Como escolher o ténis certo para a tua passada</h3><p>Drop, amortecimento e pisada — o guia para não errares na compra.</p><div class="art__by">Equipa Não Para</div></a>
+      <a href="artigo.html?a=zonas-fc" class="art rv rv-2" data-cat="treino"><div class="art__media media"><img src="assets/img/track.png" alt="Treino na pista" loading="lazy" style="object-position:center 28%"></div><div class="art__cat"><b>Treino</b><span>· 8 min</span></div><h3>Zonas de frequência cardíaca: corre no ritmo certo</h3><p>Porque correr devagar te faz, afinal, correr mais rápido.</p><div class="art__by">Equipa Não Para</div></a>
+      <a href="artigo.html?a=24-horas-longao" class="art rv rv-3" data-cat="recuperacao"><div class="art__media media"><img src="assets/img/nutrition.png" alt="Nutrição de recuperação" loading="lazy"></div><div class="art__cat"><b>Recuperação</b><span>· 5 min</span></div><h3>As 24 horas depois de um longão</h3><p>Sono, hidratação e nutrição — recuperar também é treinar.</p><div class="art__by">Equipa Não Para</div></a>
+      <a href="artigo.html?a=muro-km30" class="art rv" data-cat="mente"><div class="art__media media"><img src="assets/img/hero.png" alt="Corredor ao amanhecer" loading="lazy"></div><div class="art__cat"><b>Mente</b><span>· 7 min</span></div><h3>O muro ao km 30 é mental? A ciência responde</h3><p>Estratégias para gerires o desconforto e não desistires.</p><div class="art__by">Equipa Não Para</div></a>
+      <a href="artigo.html?a=treino-limiar" class="art rv rv-2" data-cat="treino"><div class="art__media media"><img src="assets/img/track.png" alt="Pista de atletismo" loading="lazy" style="object-position:center 70%"></div><div class="art__cat"><b>Treino</b><span>· 9 min</span></div><h3>Treino de limiar: o segredo para correres mais rápido</h3><p>O que é, como medir e quanto deves incluir na tua semana.</p><div class="art__by">Equipa Não Para</div></a>
+      <a href="artigo.html?a=dias-descanso" class="art rv rv-3" data-cat="recuperacao"><div class="art__media media"><img src="assets/img/nutrition.png" alt="Eletrólitos e hidratação" loading="lazy" style="object-position:center 65%"></div><div class="art__cat"><b>Recuperação</b><span>· 4 min</span></div><h3>Dias de descanso: porque parar também é progredir</h3><p>A adaptação acontece no repouso, não durante o esforço.</p><div class="art__by">Equipa Não Para</div></a>
+      <a href="artigo.html?a=correr-inverno" class="art rv" data-cat="equipamento"><div class="art__media media"><img src="assets/img/shoes.png" alt="Equipamento de corrida" loading="lazy" style="object-position:center 70%"></div><div class="art__cat"><b>Equipamento</b><span>· 5 min</span></div><h3>Correr no inverno: como te vestires por camadas</h3><p>Regra dos +10°C e os tecidos que mantêm o calor sem suar a mais.</p><div class="art__by">Equipa Não Para</div></a>
+      <a href="artigo.html?a=criar-habito" class="art rv rv-2" data-cat="mente"><div class="art__media media"><img src="assets/img/hero.png" alt="Corredor solitário na estrada" loading="lazy" style="object-position:center 60%"></div><div class="art__cat"><b>Mente</b><span>· 6 min</span></div><h3>Cria o hábito: corre mesmo nos dias sem vontade</h3><p>Pequenos sistemas que tornam o treino automático.</p><div class="art__by">Equipa Não Para</div></a>
+      <a href="artigo.html?a=repeticoes-subida" class="art rv rv-3" data-cat="treino"><div class="art__media media"><img src="assets/img/hero.png" alt="Corredor numa subida ao amanhecer" loading="lazy" style="object-position:center 22%"></div><div class="art__cat"><b>Treino</b><span>· 7 min</span></div><h3>Repetições em subida: força e velocidade no mesmo treino</h3><p>O exercício mais subvalorizado para ganhares potência.</p><div class="art__by">Equipa Não Para</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap cta__grid">
+    <div><span class="kicker" style="color:var(--volt-ink)">Newsletter semanal</span><h2 style="margin-top:18px">Dicas novas,<br>todas as semanas.</h2></div>
+    <div>
+      <p style="font-weight:600;margin:0 0 22px;font-size:18px">Recebe o melhor artigo da semana e uma dica acionável diretamente no teu e-mail.</p>
+      <form class="form" novalidate>
+        <div class="form__row">
+          <input class="inp" type="email" required placeholder="o.teu@email.pt" aria-label="E-mail">
+          <button class="btn" type="submit" style="--bg:var(--volt-ink);--fg:var(--volt);border-color:var(--volt-ink)">Subscrever<span class="arr">↗</span></button>
+        </div>
+        <span class="form__note">Junta-te a +12.000 corredores.</span>
+        <span class="form__ok">✓ Estás dentro. Vemo-nos na estrada.</span>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__lede">Não pares.<br><b>Corre</b> o próximo<br>quilómetro.</div>
+      <div class="fcol"><h5>Treino</h5><a href="planos.html">Plano 5K</a><a href="planos.html">Plano 10K</a><a href="planos.html">Meia maratona</a><a href="planos.html">Maratona</a></div>
+      <div class="fcol"><h5>Recursos</h5><a href="blog.html">Dicas</a><a href="nutricao.html">Nutrição</a><a href="nutricao.html">Suplementação</a><a href="sobre.html">Sobre nós</a></div>
+      <div class="fcol"><h5>Segue-nos</h5><a href="#">Instagram</a><a href="#">Strava</a><a href="#">YouTube</a><a href="sobre.html">Contacto</a></div>
+    </div>
+    <div class="foot__bot"><span>© 2026 Não Para · Feito para correr em Portugal</span><span>Privacidade · Termos</span></div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<script>window.NP_LANG='pt';</script>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Treino | Não Para</title>
+<meta name="description" content="Plano de treino passo a passo, semana a semana, adaptado à tua distância e nível.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Manrope:wght@400..800&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="assets/cms.js"></script>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="index.html" aria-label="Não Para — início"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l4-8 4 5 3-6 5 9"/></svg></span><span>NÃO<b>PARA</b></span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="index.html">Início</a>
+      <a href="planos.html" class="is-active">Planos</a>
+      <a href="blog.html">Dicas</a>
+      <a href="nutricao.html">Nutrição</a>
+      <a href="sobre.html">Sobre</a>
+    </nav>
+    <div class="hdr__cta">
+      <div class="lang" role="group" aria-label="Idioma / Language"><a class="lang__o is-on" href="plano.html" aria-current="true">PT</a><a class="lang__o" href="en/plano.html">EN</a></div>
+      
+      <a href="planos.html" class="btn btn--volt">Todos os planos<span class="arr">↗</span></a>
+      <button class="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <div class="wrap drawer__top">
+    <a class="brand" href="index.html"><span class="brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l4-8 4 5 3-6 5 9"/></svg></span><span>NÃO<b>PARA</b></span></a>
+    <button class="burger" aria-label="Fechar menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="drawer__links">
+    <a href="index.html"><span class="ix">01</span>Início</a>
+    <a href="planos.html"><span class="ix">02</span>Planos</a>
+    <a href="blog.html"><span class="ix">03</span>Dicas</a>
+    <a href="nutricao.html"><span class="ix">04</span>Nutrição</a>
+    <a href="sobre.html"><span class="ix">05</span>Sobre</a>
+  </nav>
+  <div class="drawer__foot">
+    <div class="lang" role="group" aria-label="Idioma / Language"><a class="lang__o is-on" href="plano.html" aria-current="true">PT</a><a class="lang__o" href="en/plano.html">EN</a></div>
+    <a href="planos.html" class="btn btn--volt btn--lg">Todos os planos<span class="arr">↗</span></a></div>
+</div>
+
+<main id="plan-root"><!-- preenchido por JS --></main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__lede">Não pares.<br><b>Corre</b> o próximo<br>quilómetro.</div>
+      <div class="fcol"><h5>Treino</h5><a href="planos.html">Plano 5K</a><a href="planos.html">Plano 10K</a><a href="planos.html">Meia maratona</a><a href="planos.html">Maratona</a></div>
+      <div class="fcol"><h5>Recursos</h5><a href="blog.html">Dicas</a><a href="nutricao.html">Nutrição</a><a href="nutricao.html">Suplementação</a><a href="sobre.html">Sobre nós</a></div>
+      <div class="fcol"><h5>Segue-nos</h5><a href="#">Instagram</a><a href="#">Strava</a><a href="#">YouTube</a><a href="sobre.html">Contacto</a></div>
+    </div>
+    <div class="foot__bot"><span>© 2026 Não Para · Feito para correr em Portugal</span><span>Privacidade · Termos</span></div>
+  </div>
+</footer>
+
+<script src="assets/plans.js"></script>
+<script>
+(function () {
+  var root = document.getElementById("plan-root");
+  /* keep ?p= when switching language */
+  document.querySelectorAll(".lang a").forEach(function (a) {
+    if (a.getAttribute("href").indexOf("plano.html") > -1) a.href = a.getAttribute("href") + location.search;
+  });
+  function qp(k){ return new URLSearchParams(location.search).get(k); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];}); }
+
+  var slug = qp("p") || "5k-iniciante";
+  var plan = window.NP_buildPlan(slug);
+
+  if (!plan) {
+    root.innerHTML = '<section class="phero"><div class="wrap plan-not-found">' +
+      '<h1 class="h-xl">Plano não<br>encontrado.</h1>' +
+      '<p class="lead" style="margin:24px auto 30px;max-width:40ch">Esse plano não existe ou o link está incompleto. Vê todos os planos disponíveis.</p>' +
+      '<a href="planos.html" class="btn btn--volt btn--lg">Ver todos os planos<span class="arr">↗</span></a></div></section>';
+    return;
+  }
+
+  document.title = plan.dist + " " + plan.level + " | Plano de Treino | Não Para";
+
+  var diffLabels = ["", "Muito acessível", "Acessível", "Moderado", "Exigente", "Muito exigente"];
+  function diffDots(d){ var s=""; for(var i=1;i<=5;i++) s+='<i class="'+(i<=d?"on":"")+'"></i>'; return s; }
+
+  /* ---- HERO ---- */
+  var distHtml = plan.dist === "Trail" ? "<em>Trail</em>" : plan.dist.replace("K", "<em>K</em>");
+  var html = '<section class="pdetail-hero">' +
+    '<div class="wrap">' +
+      '<div class="phero__crumb"><a href="planos.html">Planos</a> · ' + esc(plan.dist) + ' · ' + esc(plan.level) + '</div>' +
+      '<div class="pd-head">' +
+        '<div><div class="pd-dist">' + distHtml + '</div></div>' +
+        '<div>' +
+          '<div class="pd-chips">' +
+            '<span class="diff"><span class="diff__dots">' + diffDots(plan.diff) + '</span>' + esc(diffLabels[plan.diff]) + '</span>' +
+            (plan.popular ? '<span class="tag tag--volt">Mais popular</span>' : '') +
+          '</div>' +
+          '<p class="lead" style="font-size:18px">' + esc(plan.blurb) + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="pd-overview">' +
+        '<div class="pd-ov"><div class="pd-ov__n"><b>' + plan.weeks + '</b></div><div class="pd-ov__l">Semanas</div></div>' +
+        '<div class="pd-ov"><div class="pd-ov__n">' + plan.freq + '×</div><div class="pd-ov__l">Treinos / semana</div></div>' +
+        '<div class="pd-ov"><div class="pd-ov__n">' + (plan.peakKm ? plan.peakKm + ' km' : '5 km') + '</div><div class="pd-ov__l">' + (plan.peakKm ? 'Pico semanal' : 'Meta final') + '</div></div>' +
+        '<div class="pd-ov"><div class="pd-ov__n" style="font-size:clamp(16px,1.6vw,20px);line-height:1.2">' + esc(plan.goal) + '</div><div class="pd-ov__l">Objetivo</div></div>' +
+      '</div>' +
+    '</div></section>';
+
+  /* ---- marquee ---- */
+  var mq = "Semana " + 1 + " a " + plan.weeks;
+  html += '<div class="marquee" aria-hidden="true"><div class="marquee__track">' +
+    '<span>Começa hoje<i class="dot"></i>Segue o plano<i class="dot"></i>Não pares<i class="dot"></i>Começa hoje<i class="dot"></i>Segue o plano<i class="dot"></i>Não pares<i class="dot"></i></span>' +
+    '<span>Começa hoje<i class="dot"></i>Segue o plano<i class="dot"></i>Não pares<i class="dot"></i>Começa hoje<i class="dot"></i>Segue o plano<i class="dot"></i>Não pares<i class="dot"></i></span>' +
+    '</div></div>';
+
+  /* ---- legend + paces ---- */
+  html += '<section class="sec--tight" style="padding-top:clamp(36px,4vw,56px);padding-bottom:8px"><div class="wrap">' +
+    '<div class="shead" style="margin-bottom:24px"><div><span class="kicker">Como ler o plano</span>' +
+    '<h2 class="h-md" style="margin-top:14px;max-width:24ch">Cada semana, sete dias. Segue a cor, faz o treino, marca como feito.</h2></div></div>' +
+    '<div class="legend">' +
+      '<span class="legend__i"><span class="swatch s-rest"></span>Descanso</span>' +
+      '<span class="legend__i"><span class="swatch s-easy"></span>Corrida fácil</span>' +
+      '<span class="legend__i"><span class="swatch s-q"></span>Qualidade / velocidade</span>' +
+      '<span class="legend__i"><span class="swatch s-tempo"></span>Limiar</span>' +
+      '<span class="legend__i"><span class="swatch s-long"></span>Longão</span>' +
+      '<span class="legend__i"><span class="swatch s-force"></span>Força / cross</span>' +
+    '</div>' +
+    '<p class="lead" style="font-size:15.5px;margin-top:22px;max-width:70ch;border-top:1px solid var(--paper-line);padding-top:20px"><b style="color:var(--ink)">Ritmos:</b> ' + esc(plan.paces) + '</p>' +
+    '</div></section>';
+
+  /* ---- weeks grouped by phase ---- */
+  html += '<section class="sec" style="padding-top:clamp(28px,3vw,40px)"><div class="wrap">';
+  var lastPhase = null;
+  plan.data.forEach(function (w) {
+    if (w.phase !== lastPhase) {
+      var ph = window.NP_PHASE[w.phase];
+      html += '<div class="phase-band"><span class="phase-band__n">' + ph.n + '</span>' +
+        '<span class="phase-band__t">' + esc(ph.t) + '</span>' +
+        '<span class="phase-band__d">' + esc(ph.d) + '</span></div>';
+      lastPhase = w.phase;
+    }
+    html += '<div class="week rv"><div class="week__h">' +
+      '<span class="week__n">Semana <span>' + (w.n < 10 ? "0" + w.n : w.n) + '</span></span>' +
+      '<span class="week__focus">' + esc(w.focus) + '</span>' +
+      (w.km ? '<span class="week__km">≈ ' + w.km + ' km</span>' : '') +
+      (w.deload ? '<span class="week__badge">Descarga</span>' : (w.taper ? '<span class="week__badge is-taper">Taper</span>' : '')) +
+      '</div><div class="days">';
+    w.days.forEach(function (d) {
+      html += '<div class="dayc ' + d.cls + '">' +
+        '<div class="dayc__d">' + d.wd + '</div>' +
+        '<span class="dayc__chip">' + esc(d.chip) + '</span>' +
+        '<div class="dayc__t">' + esc(d.title) + '</div>' +
+        '<div class="dayc__det">' + esc(d.det) + '</div>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  });
+  html += '</div></section>';
+
+  /* ---- tips ---- */
+  html += '<section class="sec dark sec--tight"><div class="wrap">' +
+    '<div class="shead"><div><span class="kicker">Antes de começares</span><h2 class="h-lg" style="margin-top:18px">Três regras<br>de ouro.</h2></div></div>' +
+    '<div class="tipgrid">' +
+      '<div class="tipc"><span class="n">01</span><h4>Devagar é mais rápido</h4><p>A maior parte dos treinos é a ritmo fácil. Corre lento o suficiente para conseguires falar — é assim que se constrói resistência.</p></div>' +
+      '<div class="tipc"><span class="n">02</span><h4>Ouve o corpo</h4><p>Dor diferente de cansaço é sinal para parar. Reorganiza a semana se precisares, mas não treines lesionado.</p></div>' +
+      '<div class="tipc"><span class="n">03</span><h4>Consistência ganha</h4><p>Falhaste um treino? Segue em frente. O que conta é a soma das semanas, não a perfeição de cada dia.</p></div>' +
+    '</div></div></section>';
+
+  /* ---- CTA (download PDF) ---- */
+  html += '<section class="cta"><div class="wrap cta__grid">' +
+    '<div><span class="kicker" style="color:var(--volt-ink)">Leva o plano contigo</span><h2 style="margin-top:18px">Descarrega o ' + esc(plan.dist) + '<br>em PDF.</h2></div>' +
+    '<div><p style="font-weight:600;margin:0 0 22px;font-size:18px">Deixa o teu e-mail e o plano completo — as ' + plan.weeks + ' semanas, treino a treino — começa a descarregar de imediato.</p>' +
+    '<form class="form" id="plan-form" novalidate><div class="form__row">' +
+    '<input class="inp" type="email" required placeholder="o.teu@email.pt" aria-label="E-mail">' +
+    '<button class="btn" type="submit" style="--bg:var(--volt-ink);--fg:var(--volt);border-color:var(--volt-ink)">Descarregar PDF<span class="arr">↓</span></button>' +
+    '</div>' +
+    '<label class="consent"><input type="checkbox" id="plan-consent"><span>Aceito que o meu e-mail seja usado para me enviar este plano e dicas de treino. Li a <a href="#privacidade">Política de Privacidade</a> e sei que posso cancelar a qualquer momento. <span class="consent__req">(obrigatório)</span></span></label>' +
+    '<span class="form__note">O download é imediato. Tratamos os teus dados ao abrigo do RGPD e nunca os partilhamos.</span>' +
+    '<span class="form__ok">✓ Download iniciado. Bons treinos — e não pares!</span></form></div>' +
+    '</div></section>';
+
+  root.innerHTML = html;
+
+  /* re-run shared behaviours that depend on injected DOM */
+  var rv = root.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: 0.06 });
+    rv.forEach(function (el) { io.observe(el); });
+  } else { rv.forEach(function (el) { el.classList.add("in"); }); }
+
+  /* PDF download form (GDPR-compliant: explicit consent, immediate download) */
+  var pform = document.getElementById("plan-form");
+  if (pform) {
+    var emailInp = pform.querySelector('input[type=email]');
+    var consent = pform.querySelector('#plan-consent');
+    var clabel = pform.querySelector('.consent');
+    pform.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var okEmail = emailInp.checkValidity() && emailInp.value.trim() !== "";
+      var okConsent = consent.checked;
+      if (!okEmail) { emailInp.classList.add("inp--err"); emailInp.focus(); } else { emailInp.classList.remove("inp--err"); }
+      if (!okConsent) { clabel.classList.add("consent--err"); } else { clabel.classList.remove("consent--err"); }
+      if (!okEmail || !okConsent) return;
+      try { downloadPlanPDF(plan); } catch (err) { /* still confirm */ }
+      pform.classList.add("is-sent");
+    });
+  }
+})();
+
+/* ---------- build & download a branded PDF for this plan ---------- */
+function downloadPlanPDF(plan) {
+  var ns = window.jspdf;
+  if (!ns || !ns.jsPDF) { return false; }
+  var doc = new ns.jsPDF({ unit: "pt", format: "a4" });
+  var W = doc.internal.pageSize.getWidth();
+  var H = doc.internal.pageSize.getHeight();
+  var M = 44, x2 = M + 48;
+  var INK = [14, 16, 11], VOLT = [201, 247, 63], DIM = [110, 112, 102], MUT = [150, 150, 140];
+
+  function ensure(space) { if (y > H - space) { doc.addPage(); y = M + 12; } }
+
+  /* cover band */
+  doc.setFillColor(14, 16, 11); doc.rect(0, 0, W, 160, "F");
+  doc.setFillColor(201, 247, 63); doc.rect(0, 160, W, 6, "F");
+  doc.setFont("helvetica", "bold"); doc.setFontSize(12); doc.setTextColor(201, 247, 63);
+  doc.text("NÃO PARA", M, 50);
+  doc.setTextColor(244, 243, 236); doc.setFontSize(40);
+  doc.text((plan.dist + "  " + plan.level).toUpperCase(), M, 108);
+  doc.setFont("helvetica", "normal"); doc.setFontSize(11); doc.setTextColor(201, 247, 63);
+  doc.text("Plano de treino  ·  " + plan.weeks + " semanas  ·  " + plan.freq + "x por semana", M, 140);
+
+  var y = 200;
+  doc.setTextColor(14, 16, 11); doc.setFont("helvetica", "bold"); doc.setFontSize(13);
+  var goal = doc.splitTextToSize("Objetivo: " + plan.goal, W - 2 * M);
+  doc.text(goal, M, y); y += goal.length * 16 + 8;
+  doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor(110, 112, 102);
+  var intro = doc.splitTextToSize(plan.paces, W - 2 * M);
+  doc.text(intro, M, y); y += intro.length * 13 + 16;
+
+  /* weeks */
+  plan.data.forEach(function (w) {
+    ensure(120);
+    doc.setDrawColor(220, 219, 207); doc.setLineWidth(1); doc.line(M, y, W - M, y); y += 18;
+    doc.setFont("helvetica", "bold"); doc.setFontSize(12); doc.setTextColor(14, 16, 11);
+    doc.text("SEMANA " + (w.n < 10 ? "0" + w.n : w.n) + "   ·   " + w.focus.toUpperCase(), M, y);
+    var right = (w.km ? "~" + w.km + " km" : "") + (w.taper ? "   TAPER" : (w.deload ? "   DESCARGA" : ""));
+    if (right) { doc.setFont("helvetica", "normal"); doc.setFontSize(9); doc.setTextColor(120, 122, 112); doc.text(right, W - M, y, { align: "right" }); }
+    y += 18;
+    w.days.forEach(function (d) {
+      ensure(46);
+      doc.setFont("helvetica", "bold"); doc.setFontSize(9.5); doc.setTextColor(14, 16, 11);
+      doc.text(d.wd.toUpperCase(), M, y);
+      var tl = doc.splitTextToSize(d.title, W - M - x2);
+      doc.text(tl, x2, y); y += tl.length * 12;
+      if (d.det) {
+        doc.setFont("helvetica", "normal"); doc.setFontSize(8.5); doc.setTextColor(110, 112, 102);
+        var dl = doc.splitTextToSize(d.det, W - M - x2);
+        doc.text(dl, x2, y); y += dl.length * 10.5;
+      }
+      y += 7;
+    });
+    y += 8;
+  });
+
+  /* footer on every page */
+  var pages = doc.internal.getNumberOfPages();
+  for (var i = 1; i <= pages; i++) {
+    doc.setPage(i);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(8); doc.setTextColor(150, 150, 140);
+    doc.text("Não Para  ·  " + plan.dist + " " + plan.level + "  ·  naopara.pt", M, H - 24);
+    doc.text(i + " / " + pages, W - M, H - 24, { align: "right" });
+  }
+
+  doc.save("Plano-NaoPara-" + plan.dist + "-" + plan.level.replace(/[^A-Za-z0-9]+/g, "-") + ".pdf");
+  return true;
+}
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

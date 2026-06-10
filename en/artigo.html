@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>window.NP_LANG='en';</script>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../assets/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Article | Não Para</title>
+<meta name="description" content="Running tips and science — practical articles for runners of every level.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Manrope:wght@400..800&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<script src="../assets/cms.js"></script>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="index.html" aria-label="Não Para — home"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l4-8 4 5 3-6 5 9"/></svg></span><span>NÃO<b>PARA</b></span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="planos.html">Plans</a>
+      <a href="blog.html" class="is-active">Tips</a>
+      <a href="nutricao.html">Nutrition</a>
+      <a href="sobre.html">About</a>
+    </nav>
+    <div class="hdr__cta">
+      <div class="lang" role="group" aria-label="Idioma / Language"><a class="lang__o" href="../artigo.html">PT</a><a class="lang__o is-on" href="artigo.html" aria-current="true">EN</a></div>
+      <a href="planos.html" class="btn btn--volt">Start now<span class="arr">↗</span></a>
+      <button class="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <div class="wrap drawer__top">
+    <a class="brand" href="index.html"><span class="brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l4-8 4 5 3-6 5 9"/></svg></span><span>NÃO<b>PARA</b></span></a>
+    <button class="burger" aria-label="Close menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="drawer__links">
+    <a href="index.html"><span class="ix">01</span>Home</a>
+    <a href="planos.html"><span class="ix">02</span>Plans</a>
+    <a href="blog.html"><span class="ix">03</span>Tips</a>
+    <a href="nutricao.html"><span class="ix">04</span>Nutrition</a>
+    <a href="sobre.html"><span class="ix">05</span>About</a>
+  </nav>
+  <div class="drawer__foot">
+    <div class="lang" role="group" aria-label="Idioma / Language"><a class="lang__o" href="../artigo.html">PT</a><a class="lang__o is-on" href="artigo.html" aria-current="true">EN</a></div>
+    <a href="planos.html" class="btn btn--volt btn--lg">Start now<span class="arr">↗</span></a>
+  </div>
+</div>
+
+<main id="art-root"><!-- preenchido por JS --></main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__lede">Don't stop.<br><b>Run</b> the next<br>kilometre.</div>
+      <div class="fcol"><h5>Training</h5><a href="planos.html">5K plan</a><a href="planos.html">10K plan</a><a href="planos.html">Half marathon</a><a href="planos.html">Marathon</a></div>
+      <div class="fcol"><h5>Resources</h5><a href="blog.html">Tips</a><a href="nutricao.html">Nutrition</a><a href="nutricao.html">Supplements</a><a href="sobre.html">About us</a></div>
+      <div class="fcol"><h5>Follow us</h5><a href="#">Instagram</a><a href="#">Strava</a><a href="#">YouTube</a><a href="sobre.html">Contact</a></div>
+    </div>
+    <div class="foot__bot"><span>© 2026 Não Para · Made for running in Portugal</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+<script src="../assets/articles.js"></script>
+<script>
+(function () {
+  var EN = (window.NP_LANG === "en");
+  var root = document.getElementById("art-root");
+  document.querySelectorAll(".lang a").forEach(function (a) {
+    if (a.getAttribute("href").indexOf("artigo.html") > -1) a.href = a.getAttribute("href") + location.search;
+  });
+  function qp(k){ return new URLSearchParams(location.search).get(k); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];}); }
+
+  var T = EN ? { team:"Não Para Team", back:"Back to tips", read:"min read", more:"Read more tips", ctaK:"Weekly newsletter", ctaH:"Tips like this,<br>every week.", ctaP:"Get the week's best article and one actionable tip straight to your inbox.", sub:"Subscribe", note:"Join 12,000+ runners.", ok:"✓ You're in. See you on the road.", crumb:"Tips", notfound:"Article not<br>found.", notfoundP:"That article doesn't exist or the link is incomplete.", all:"See all articles" }
+              : { team:"Equipa Não Para", back:"Voltar às dicas", read:"min de leitura", more:"Ver mais dicas", ctaK:"Newsletter semanal", ctaH:"Dicas como esta,<br>todas as semanas.", ctaP:"Recebe o melhor artigo da semana e uma dica acionável diretamente no teu e-mail.", sub:"Subscrever", note:"Junta-te a +12.000 corredores.", ok:"✓ Estás dentro. Vemo-nos na estrada.", crumb:"Dicas", notfound:"Artigo não<br>encontrado.", notfoundP:"Esse artigo não existe ou o link está incompleto.", all:"Ver todos os artigos" };
+  var BLOG = EN ? "blog.html" : "blog.html";
+
+  var slug = qp("a") || "regra-10-porcento";
+  var art = window.NP_getArticle(slug);
+
+  if (!art) {
+    root.innerHTML = '<section class="phero"><div class="wrap plan-not-found">' +
+      '<h1 class="h-xl">' + T.notfound + '</h1>' +
+      '<p class="lead" style="margin:24px auto 30px;max-width:40ch">' + T.notfoundP + '</p>' +
+      '<a href="' + BLOG + '" class="btn btn--volt btn--lg">' + T.all + '<span class="arr">↗</span></a></div></section>';
+    return;
+  }
+
+  document.title = art.title + " | Não Para";
+  var d = new Date(art.date + "T00:00:00");
+  var months = EN ? ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] : ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+  var dateStr = d.getDate() + " " + months[d.getMonth()] + " " + d.getFullYear();
+
+  var html = '<article>';
+  /* hero */
+  html += '<div class="art-hero"><div class="wrap">' +
+    '<div class="art-hero__meta"><a href="' + BLOG + '" style="color:var(--volt)">' + esc(T.crumb) + '</a><span>·</span><b>' + esc(art.catLabel) + '</b><span>·</span>' + art.min + ' ' + esc(T.read) + '</div>' +
+    '<h1>' + esc(art.title) + '</h1>' +
+    '<p class="art-hero__dek">' + esc(art.dek) + '</p>' +
+    '<div class="art-hero__by"><span class="av">NP</span><span>' + esc(T.team) + '</span><span>·</span><span>' + dateStr + '</span></div>' +
+    '</div></div>';
+  /* cover */
+  html += '<div class="art-cover"><img src="../assets/img/' + art.img + '" alt="' + esc(art.title) + '" style="object-position:' + art.pos + '"></div>';
+  /* body */
+  html += '<div class="wrap"><div class="article">';
+  art.body.forEach(function (blk, i) {
+    if (blk[0]) html += '<h2>' + esc(blk[0]) + '</h2>';
+    html += '<p' + (i === 0 && !blk[0] ? ' class="article__lead"' : '') + '>' + esc(blk[1]) + '</p>';
+  });
+  html += '<div class="article__tags"><span class="chip">' + esc(art.catLabel) + '</span><span class="chip">Não Para</span></div>';
+  html += '<div style="margin-top:40px"><a href="' + BLOG + '" class="article__back"><span class="arr">←</span>' + esc(T.back) + '</a></div>';
+  html += '</div></div>';
+  html += '</article>';
+
+  /* related */
+  var others = window.NP_ARTICLES.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+  html += '<section class="sec paper2 related"><div class="wrap">' +
+    '<div class="shead"><div><span class="kicker">' + (EN ? "Keep reading" : "Continua a ler") + '</span><h2 class="h-lg" style="margin-top:16px">' + esc(T.more) + '.</h2></div></div>' +
+    '<div class="art-grid">';
+  others.forEach(function (a) {
+    html += '<a href="artigo.html?a=' + a.slug + '" class="art">' +
+      '<div class="art__media media"><img src="../assets/img/' + a.img + '" alt="' + esc(a.title) + '" style="object-position:' + a.pos + '" loading="lazy"></div>' +
+      '<div class="art__cat"><b>' + esc(a.catLabel) + '</b><span>· ' + a.min + ' min</span></div>' +
+      '<h3>' + esc(a.title) + '</h3><div class="art__by">' + esc(T.team) + '</div></a>';
+  });
+  html += '</div></div></section>';
+
+  /* newsletter */
+  html += '<section class="cta"><div class="wrap cta__grid">' +
+    '<div><span class="kicker" style="color:var(--volt-ink)">' + esc(T.ctaK) + '</span><h2 style="margin-top:18px">' + T.ctaH + '</h2></div>' +
+    '<div><p style="font-weight:600;margin:0 0 22px;font-size:18px">' + esc(T.ctaP) + '</p>' +
+    '<form class="form" novalidate><div class="form__row">' +
+    '<input class="inp" type="email" required placeholder="' + (EN ? "you@email.com" : "o.teu@email.pt") + '" aria-label="E-mail">' +
+    '<button class="btn" type="submit" style="--bg:var(--volt-ink);--fg:var(--volt);border-color:var(--volt-ink)">' + esc(T.sub) + '<span class="arr">↗</span></button>' +
+    '</div><span class="form__note">' + esc(T.note) + '</span><span class="form__ok">' + esc(T.ok) + '</span></form></div>' +
+    '</div></section>';
+
+  root.innerHTML = html;
+  window.scrollTo(0, 0);
+})();
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
